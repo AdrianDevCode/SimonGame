@@ -1,0 +1,2 @@
+# SimonGame
+Simplistic Simon game
