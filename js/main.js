@@ -8,7 +8,9 @@ function init() {
   //using easeljs framework
   var canvas = document.getElementById("myCanvas");
   var stage = new createjs.Stage(canvas);
+  createjs.Touch.enable(stage);
 
+//  ~~~~~~~~~~~~ start button ~~~~~~~~~~~~~~~~~~
   var startButton = new createjs.Shape();
   var fillCommand4 = startButton.graphics.f("DeepSkyBlue").command;
   startButton.graphics.s("DeepSkyBlue").dc(50, 50, 30);
