@@ -4,6 +4,7 @@ function init() {
   var playerArray = [];
   var myArray = ["blue", "green","yellow","red"];
   var aiArray = [];
+  var blue = 1, green = 2, yellow = 3, red = 4;
 
   //using easeljs framework
   var canvas = document.getElementById("myCanvas");
@@ -44,28 +45,28 @@ function init() {
 
 // ~~~~~~Moouse over circle commands ~~~~~~~~~~~~~~~~~~
 bigCircle.on("mousedown", function(event) {
-   fillCommand.style = "#00e600";
+   fillCommand.style = "blue";
  });
  bigCircle.on("click", function(event) {
    fillCommand.style = "DeepSkyBlue";
  });
 
  bigCircle1.on("mousedown", function(event) {
-    fillCommand1.style = "#00e600";
+    fillCommand1.style = "green";
   });
   bigCircle1.on("click", function(event) {
     fillCommand1.style = "DeepSkyBlue";
   });
 
   bigCircle2.on("mousedown", function(event) {
-     fillCommand2.style = "#00e600";
+     fillCommand2.style = "yellow";
    });
    bigCircle2.on("click", function(event) {
      fillCommand2.style = "DeepSkyBlue";
    });
 
    bigCircle3.on("mousedown", function(event) {
-      fillCommand3.style = "#00e600";
+      fillCommand3.style = "red";
     });
     bigCircle3.on("click", function(event) {
       fillCommand3.style = "DeepSkyBlue";
@@ -83,10 +84,24 @@ bigCircle.on("mousedown", function(event) {
   createjs.Ticker.addEventListener("tick", stage);
 
 //end of drawing on canvas ~~~~~~~~~~~~~~~~
-   function random(min, max) { //randomizer function
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+   function random() { //randomizer function
+  min = Math.ceil(1);
+  max = Math.floor(4);
+  return Math.floor(Math.random() * (4 - 1 + 1)) + 1;
 }
+  startButton.on("click", function(event){
+  if (fillCommand4.style === "red") {
+    //DO stuff
+    var turns = 1;
+    for(var i = 0; i < turns; i++){
+      aiArray[i] = random();
+      if(aiArray[i] == 1){fillCommand.style = "blue";}
+      else if(aiArray[i] == 2){ fillCommand1.style = "green";}
+      else if(aiArray[i] == 3){ fillCommand2.style = "yellow";}
+      else if(aiArray[i] == 4){ fillCommand3.style = "red";}
+      
+    }
 
+  }
+});
 }
